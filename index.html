@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="一个清爽、快速、适合 GitHub Pages 托管的网址收藏展示页。"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <title>网址收藏</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%231f6b4f%22/><path d=%22M20 13h24v39L32 44l-12 8z%22 fill=%22white%22/></svg>" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="bookmarks.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="网址收藏首页">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span>
+        </span>
+        <span>网址收藏</span>
+      </a>
+
+      <div class="header-actions">
+        <span class="bookmark-count" id="bookmarkCount" aria-live="polite"></span>
+        <button
+          class="icon-button"
+          id="themeButton"
+          type="button"
+          aria-label="切换深色模式"
+          title="切换深色模式"
+        >
+          <span class="theme-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="toolbar" aria-label="网址筛选">
+        <label class="search-box" for="searchInput">
+          <span class="search-icon" aria-hidden="true"></span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="搜索名称、简介或标签"
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <kbd id="searchShortcut" aria-hidden="true">/</kbd>
+        </label>
+
+        <nav class="category-nav" id="categoryNav" aria-label="网址分类"></nav>
+      </section>
+
+      <section class="bookmark-section" aria-labelledby="sectionTitle">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" id="sectionEyebrow">全部收藏</p>
+            <h1 id="sectionTitle">常用网址，一目了然</h1>
+          </div>
+          <span class="result-count" id="resultCount"></span>
+        </div>
+
+        <div class="bookmark-grid" id="bookmarkGrid"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <span class="empty-mark" aria-hidden="true"></span>
+          <h2>没有找到相关网址</h2>
+          <p>换个关键词或分类试试。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>CURATED LINKS</span>
+      <span id="footerYear"></span>
+    </footer>
+  </body>
+</html>
